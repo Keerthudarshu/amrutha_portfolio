@@ -1,0 +1,963 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrutha M - Associate Sales Executive Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        'gold': {
+                            300: '#FFE55C',
+                            400: '#FFD700',
+                            500: '#D4AF37',
+                            600: '#B8860B',
+                            700: '#9B7A00'
+                        },
+                        'royal-blue': {
+                            500: '#1E40AF',
+                            600: '#1E3A8A',
+                            700: '#1E3A8A',
+                            800: '#1E2A5B',
+                            900: '#0F172A'
+                        },
+                        'rose-gold': {
+                            400: '#F4C2A1',
+                            500: '#E8B4A0',
+                            600: '#D1A690'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                        'gradient': 'gradient 15s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        },
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(-45deg, #1E3A8A, #D4AF37, #1E40AF, #FFD700);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #D4AF37, #FFD700, #B8860B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.3);
+        }
+        
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        
+        .parallax {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #B8860B, #D4AF37);
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-lg border-b border-gold-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-playfair font-bold text-gradient">Amrutha M</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="nav-link text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Home</a>
+                    <a href="#about" class="nav-link text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">About</a>
+                    <a href="#education" class="nav-link text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Education</a>
+                    <a href="#experience" class="nav-link text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Experience</a>
+                    <a href="#achievements" class="nav-link text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Achievements</a>
+                    <a href="#skills" class="nav-link text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Skills</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-royal-blue-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#hero" class="block text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Home</a>
+                <a href="#about" class="block text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">About</a>
+                <a href="#education" class="block text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Education</a>
+                <a href="#experience" class="block text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Experience</a>
+                <a href="#achievements" class="block text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Achievements</a>
+                <a href="#skills" class="block text-royal-blue-700 hover:text-gold-500 transition-colors font-medium">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden">
+        <!-- @COMPONENT: HeroSection [animated background, professional intro] -->
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white animate-slide-up">
+                    <h1 class="text-5xl lg:text-7xl font-playfair font-bold mb-6 animate-float">
+                        Amrutha M
+                    </h1>
+                    <h2 class="text-2xl lg:text-3xl font-montserrat font-medium mb-6 text-gold-300">
+                        Associate Sales Executive
+                    </h2>
+                    <p class="text-xl lg:text-2xl mb-8 font-light leading-relaxed">
+                        Passionate about sales, customer engagement, and building strong client relationships in the luxury jewellery industry
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-gem mr-2"></i>Bhima Jewellers
+                        </span>
+                        <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-map-marker-alt mr-2"></i>HBR Layout, Bengaluru
+                        </span>
+                        <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-graduation-cap mr-2"></i>B.Com Graduate
+                        </span>
+                    </div>
+                    <a href="#about" class="inline-flex items-center bg-gold-500 hover:bg-gold-600 text-royal-blue-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                        Discover My Journey
+                        <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+                <div class="flex justify-center animate-fade-in">
+                    <div class="relative">
+                        <!-- Professional headshot placeholder -->
+                        <div class="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-gold-400 to-rose-gold-500 p-2 animate-float">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                <!-- Professional business woman portrait in modern office setting -->
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" alt="Amrutha M - Professional Portrait" class="w-full h-full rounded-full object-cover" data-mock="true">
+                            </div>
+                        </div>
+                        <!-- Floating elements -->
+                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-gold-400 rounded-full animate-float" style="animation-delay: 1s;"></div>
+                        <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-rose-gold-400 rounded-full animate-float" style="animation-delay: 2s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+        <!-- @END_COMPONENT: HeroSection -->
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <!-- @COMPONENT: AboutSection [personal background, career summary] -->
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold text-royal-blue-800 mb-6">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-on-scroll">
+                    <!-- Professional workspace with modern office environment -->
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Professional workspace environment" class="rounded-xl shadow-2xl w-full h-auto" data-mock="true">
+                </div>
+                
+                <div class="space-y-6 animate-on-scroll">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        I am a dedicated commerce graduate with hands-on experience in customer engagement and sales excellence. Currently serving as an Associate Sales Executive at Bhima Jewellers, I specialize in understanding customer preferences, presenting luxury jewellery collections, and delivering personalized buying experiences.
+                    </p>
+                    
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        My background in Corporate Social Responsibility through my internship at PACS Bellare, combined with professional development through the Mahindra Pride Employability Skills Programme, has strengthened my communication, persuasion, and client relationship management abilities.
+                    </p>
+                    
+                    <div class="bg-gradient-to-r from-royal-blue-50 to-gold-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-royal-blue-800 mb-4">Core Strengths</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-comments text-gold-500 mr-3"></i>
+                                <span class="text-gray-700">Customer Engagement</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-handshake text-gold-500 mr-3"></i>
+                                <span class="text-gray-700">Relationship Building</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-chart-line text-gold-500 mr-3"></i>
+                                <span class="text-gray-700">Sales Strategy</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users text-gold-500 mr-3"></i>
+                                <span class="text-gray-700">Team Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-royal-blue-100 text-royal-blue-800 px-4 py-2 rounded-full font-medium">
+                            <i class="fas fa-birthday-cake mr-2"></i>Age: 21 (DOB: 06/05/2003)
+                        </div>
+                        <div class="bg-gold-100 text-gold-800 px-4 py-2 rounded-full font-medium">
+                            <i class="fas fa-venus mr-2"></i>Female
+                        </div>
+                        <div class="bg-rose-gold-100 text-rose-gold-800 px-4 py-2 rounded-full font-medium">
+                            <i class="fas fa-flag mr-2"></i>Indian
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-gold-100 to-rose-gold-100 p-6 rounded-xl">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-3">Languages</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">English</span>
+                            <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">Kannada</span>
+                            <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">Tamil</span>
+                            <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">Malayalam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: AboutSection -->
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gradient-to-br from-royal-blue-50 to-gold-50">
+        <!-- @COMPONENT: EducationTimeline [animated timeline with education details] -->
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold text-royal-blue-800 mb-6">Education</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">My academic journey building the foundation for excellence in commerce and business</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gold-400 to-royal-blue-400"></div>
+                
+                <!-- Education items -->
+                <div class="space-y-16">
+                    <!-- B.Com -->
+                    <div class="relative animate-on-scroll">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-gradient-to-r from-gold-400 to-gold-600 w-6 h-6 rounded-full absolute left-1/2 transform -translate-x-1/2 z-10"></div>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-8 items-center">
+                            <div class="lg:text-right lg:pr-12">
+                                <div class="bg-white p-8 rounded-xl shadow-lg card-hover border border-gold-200">
+                                    <span class="bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                                    <h3 class="text-2xl font-playfair font-bold text-royal-blue-800 mt-4 mb-2">Bachelor of Commerce</h3>
+                                    <p class="text-gray-600 font-medium mb-2">Nehru Memorial College Sullia</p>
+                                    <p class="text-gold-600 font-semibold">CGPA: 6.7</p>
+                                    <p class="text-gray-700 mt-3">Comprehensive study in commerce, accounting, business management, and financial analysis</p>
+                                </div>
+                            </div>
+                            <div class="lg:pl-12">
+                                <!-- Graduation ceremony with students in caps and gowns -->
+                                <img src="https://pixabay.com/get/g7a3a0b13072b142d24072574bfaf106e08739d647c8bde561b1e569d1aace10dd38d72279ea3a6bc2c778c87368fabe8199cb9f98eeb30d0f51b2efd6e1b535e_1280.jpg" alt="University graduation ceremony" class="rounded-xl shadow-lg w-full h-auto" data-mock="true">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PU -->
+                    <div class="relative animate-on-scroll">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-gradient-to-r from-royal-blue-400 to-royal-blue-600 w-6 h-6 rounded-full absolute left-1/2 transform -translate-x-1/2 z-10"></div>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-8 items-center">
+                            <div class="lg:order-2 lg:pl-12">
+                                <div class="bg-white p-8 rounded-xl shadow-lg card-hover border border-royal-blue-200">
+                                    <span class="bg-royal-blue-100 text-royal-blue-800 px-3 py-1 rounded-full text-sm font-medium">2021</span>
+                                    <h3 class="text-2xl font-playfair font-bold text-royal-blue-800 mt-4 mb-2">Pre-University</h3>
+                                    <p class="text-gray-600 font-medium mb-2">Sharada Women's PU College Sullia</p>
+                                    <p class="text-royal-blue-600 font-semibold">Percentage: 59.83%</p>
+                                    <p class="text-gray-700 mt-3">Foundation in commerce stream with focus on business studies and economics</p>
+                                </div>
+                            </div>
+                            <div class="lg:order-1 lg:pr-12">
+                                <!-- Students studying in college library -->
+                                <img src="https://images.unsplash.com/photo-1581726690015-c9861fa5057f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Students studying in college" class="rounded-xl shadow-lg w-full h-auto" data-mock="true">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SSLC -->
+                    <div class="relative animate-on-scroll">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-gradient-to-r from-rose-gold-400 to-rose-gold-600 w-6 h-6 rounded-full absolute left-1/2 transform -translate-x-1/2 z-10"></div>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-8 items-center">
+                            <div class="lg:text-right lg:pr-12">
+                                <div class="bg-white p-8 rounded-xl shadow-lg card-hover border border-rose-gold-200">
+                                    <span class="bg-rose-gold-100 text-rose-gold-800 px-3 py-1 rounded-full text-sm font-medium">2019</span>
+                                    <h3 class="text-2xl font-playfair font-bold text-royal-blue-800 mt-4 mb-2">SSLC</h3>
+                                    <p class="text-gray-600 font-medium mb-2">Sharada Women's High School Sullia</p>
+                                    <p class="text-rose-gold-600 font-semibold">Percentage: 65%</p>
+                                    <p class="text-gray-700 mt-3">Strong academic foundation with well-rounded education in all core subjects</p>
+                                </div>
+                            </div>
+                            <div class="lg:pl-12">
+                                <!-- High school classroom with students and teacher -->
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="High school classroom learning environment" class="rounded-xl shadow-lg w-full h-auto" data-mock="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: EducationTimeline -->
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <!-- @COMPONENT: ExperienceSection [current role and internships] -->
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold text-royal-blue-800 mb-6">Work Experience</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Professional journey in sales excellence and client relationship management</p>
+            </div>
+            
+            <!-- Current Role -->
+            <div class="mb-16 animate-on-scroll">
+                <div class="bg-gradient-to-br from-gold-50 to-royal-blue-50 rounded-2xl p-8 shadow-xl">
+                    <div class="flex flex-wrap items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-3xl font-playfair font-bold text-royal-blue-800 mb-2">Associate Sales Executive</h3>
+                            <p class="text-xl text-gold-600 font-semibold">Bhima Jewellers Private Limited</p>
+                            <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i>HBR Layout, Bengaluru</p>
+                        </div>
+                        <div class="bg-white px-6 py-3 rounded-full shadow-md">
+                            <span class="text-royal-blue-800 font-bold">Jan 2025 - Aug 2025</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8 items-start">
+                        <div>
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                As an Associate Sales Executive, I engage with customers to understand their preferences, present jewellery collections, and deliver personalized buying experiences. I support the sales team in achieving daily and monthly targets through client acquisition, relationship building, and accurate sales record management.
+                            </p>
+                            
+                            <h4 class="text-lg font-semibold text-royal-blue-800 mb-4">Key Responsibilities</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <i class="fas fa-gem text-gold-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Present luxury jewellery collections to discerning customers</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-users text-gold-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Build and maintain strong client relationships</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-target text-gold-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Achieve daily and monthly sales targets</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-chart-bar text-gold-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Maintain accurate sales records and customer data</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- Luxury jewelry store interior with elegant displays -->
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Luxury jewelry store interior" class="rounded-xl shadow-lg w-full h-auto" data-mock="true">
+                            
+                            <div class="bg-white p-6 rounded-xl shadow-md">
+                                <h5 class="font-semibold text-royal-blue-800 mb-3">Skills Developed</h5>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-sm">Customer Service</span>
+                                    <span class="bg-royal-blue-100 text-royal-blue-800 px-3 py-1 rounded-full text-sm">Sales Strategy</span>
+                                    <span class="bg-rose-gold-100 text-rose-gold-800 px-3 py-1 rounded-full text-sm">Persuasion</span>
+                                    <span class="bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-sm">Product Knowledge</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Internship Experience -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- PACS Internship -->
+                <div class="bg-gradient-to-br from-royal-blue-50 to-white p-8 rounded-xl shadow-lg card-hover animate-on-scroll">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue-800">CSR Internship</h3>
+                        <span class="bg-royal-blue-100 text-royal-blue-800 px-3 py-1 rounded-full text-sm font-medium">Feb - Mar 2024</span>
+                    </div>
+                    <p class="text-gray-600 font-medium mb-4">Bellare Primary Agricultural Credit Co-operative Society Ltd</p>
+                    
+                    <!-- Corporate social responsibility meeting in conference room -->
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" alt="Corporate social responsibility meeting" class="rounded-lg w-full h-auto mb-4" data-mock="true">
+                    
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-royal-blue-500 mt-1 mr-2"></i>30-day internship focusing on Corporate Social Responsibility</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-royal-blue-500 mt-1 mr-2"></i>Project: "Corporate Social Responsibility in PACS Ltd Bellare"</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-royal-blue-500 mt-1 mr-2"></i>Practical implementation of CSR initiatives</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-royal-blue-500 mt-1 mr-2"></i>Comprehensive project report accepted by institution</li>
+                    </ul>
+                </div>
+                
+                <!-- Mahindra Pride Training -->
+                <div class="bg-gradient-to-br from-gold-50 to-white p-8 rounded-xl shadow-lg card-hover animate-on-scroll">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue-800">Employability Skills Programme</h3>
+                        <span class="bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-sm font-medium">Sep 2023</span>
+                    </div>
+                    <p class="text-gray-600 font-medium mb-4">Mahindra Pride Classroom & Naandi Foundation</p>
+                    
+                    <!-- Professional skills training workshop with diverse participants -->
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" alt="Professional skills training workshop" class="rounded-lg w-full h-auto mb-4" data-mock="true">
+                    
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-star text-gold-500 mt-1 mr-2"></i>5-day intensive employability skills programme</li>
+                        <li class="flex items-start"><i class="fas fa-star text-gold-500 mt-1 mr-2"></i>Enhanced communication and teamwork skills</li>
+                        <li class="flex items-start"><i class="fas fa-star text-gold-500 mt-1 mr-2"></i>Professional etiquette and problem-solving training</li>
+                        <li class="flex items-start"><i class="fas fa-star text-gold-500 mt-1 mr-2"></i>Certified in Fundamentals of English Grammar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: ExperienceSection -->
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-gradient-to-br from-gold-50 via-white to-royal-blue-50">
+        <!-- @COMPONENT: AchievementsGallery [image-based achievement display] -->
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold text-royal-blue-800 mb-6">Achievements</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Professional milestones and recognitions showcasing excellence in sales and leadership</p>
+            </div>
+            
+            <!-- Achievement Categories -->
+            <div class="grid lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
+                <!-- Professional Sales Achievements -->
+                <div class="text-center animate-on-scroll">
+                    <div class="bg-gradient-to-br from-gold-400 to-gold-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-royal-blue-800 mb-2">Sales Excellence</h3>
+                    <p class="text-gray-600 text-sm">Outstanding performance in customer engagement and sales targets</p>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="bg-gradient-to-br from-royal-blue-400 to-royal-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-royal-blue-800 mb-2">Certifications</h3>
+                    <p class="text-gray-600 text-sm">Professional development and skill enhancement programs</p>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="bg-gradient-to-br from-rose-gold-400 to-rose-gold-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-royal-blue-800 mb-2">Leadership</h3>
+                    <p class="text-gray-600 text-sm">Event organization and team management experiences</p>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="bg-gradient-to-br from-green-400 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-medal text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-royal-blue-800 mb-2">Recognition</h3>
+                    <p class="text-gray-600 text-sm">Academic and extracurricular achievements</p>
+                </div>
+            </div>
+            
+            <!-- Achievement Gallery -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sales Performance Awards -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll">
+                    <!-- Professional sales achievement award ceremony -->
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Sales achievement award ceremony" class="w-full h-48 object-cover" data-mock="true">
+                    <div class="p-6">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-2">Sales Excellence Award</h4>
+                        <p class="text-gray-600 text-sm mb-3">Outstanding customer engagement and target achievement at Bhima Jewellers</p>
+                        <span class="bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-xs font-medium">2025</span>
+                    </div>
+                </div>
+                
+                <!-- Business Certificate -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll">
+                    <!-- Professional business certificate presentation -->
+                    <img src="https://pixabay.com/get/gc64273d916da8ef0900c67cf2bd1f6be75f58fc86dfd849be4c95e4a903c3a62f532ef5ef6ea037db75c3a506f41a3237000b0f0b6bb58b841e9f79f8a200ff9_1280.jpg" alt="Professional business certificate" class="w-full h-48 object-cover" data-mock="true">
+                    <div class="p-6">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-2">Mahindra Pride Certification</h4>
+                        <p class="text-gray-600 text-sm mb-3">Employability Skills Programme completion with distinction</p>
+                        <span class="bg-royal-blue-100 text-royal-blue-800 px-3 py-1 rounded-full text-xs font-medium">2023</span>
+                    </div>
+                </div>
+                
+                <!-- Corporate Training -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll">
+                    <!-- Corporate training workshop group photo -->
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Corporate training workshop" class="w-full h-48 object-cover" data-mock="true">
+                    <div class="p-6">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-2">CSR Project Excellence</h4>
+                        <p class="text-gray-600 text-sm mb-3">Successful completion of Corporate Social Responsibility project at PACS</p>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">2024</span>
+                    </div>
+                </div>
+                
+                <!-- Team Collaboration -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll">
+                    <!-- Team collaboration in business environment -->
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Team collaboration achievement" class="w-full h-48 object-cover" data-mock="true">
+                    <div class="p-6">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-2">Team Leadership</h4>
+                        <p class="text-gray-600 text-sm mb-3">Led event organization and sports programs demonstrating leadership skills</p>
+                        <span class="bg-rose-gold-100 text-rose-gold-800 px-3 py-1 rounded-full text-xs font-medium">Multiple Years</span>
+                    </div>
+                </div>
+                
+                <!-- Academic Achievement -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll">
+                    <!-- Academic achievement recognition ceremony -->
+                    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Academic achievement ceremony" class="w-full h-48 object-cover" data-mock="true">
+                    <div class="p-6">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-2">Academic Excellence</h4>
+                        <p class="text-gray-600 text-sm mb-3">B.Com graduation with strong academic performance and project acceptance</p>
+                        <span class="bg-gold-100 text-gold-800 px-3 py-1 rounded-full text-xs font-medium">2024</span>
+                    </div>
+                </div>
+                
+                <!-- Cultural Participation -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll">
+                    <!-- Cultural event participation and organization -->
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" alt="Cultural event organization" class="w-full h-48 object-cover" data-mock="true">
+                    <div class="p-6">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-2">Event Management</h4>
+                        <p class="text-gray-600 text-sm mb-3">Active participation and organizing committee member for cultural fests</p>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">School & College</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Achievement Stats -->
+            <div class="mt-16 bg-gradient-to-r from-royal-blue-600 to-gold-600 rounded-2xl p-8 text-white animate-on-scroll">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-2" data-counter="6">0</h3>
+                        <p class="text-sm opacity-90">Professional Achievements</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-2" data-counter="4">0</h3>
+                        <p class="text-sm opacity-90">Certifications Earned</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-2" data-counter="3">0</h3>
+                        <p class="text-sm opacity-90">Training Programs</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-2" data-counter="8">0</h3>
+                        <p class="text-sm opacity-90">Months Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: AchievementsGallery -->
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <!-- @COMPONENT: SkillsSection [animated skill bars and technical competencies] -->
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold text-royal-blue-800 mb-6">Skills & Expertise</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive skill set combining sales excellence with technical proficiency</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Professional Skills -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-playfair font-bold text-royal-blue-800 mb-8 flex items-center">
+                        <i class="fas fa-handshake text-gold-500 mr-3"></i>
+                        Professional Skills
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-gray-700">Customer Engagement</span>
+                                <span class="text-gold-600 font-semibold">95%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-gold-400 to-gold-600 h-3 rounded-full" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-gray-700">Sales Strategy</span>
+                                <span class="text-royal-blue-600 font-semibold">90%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-royal-blue-400 to-royal-blue-600 h-3 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-gray-700">Communication</span>
+                                <span class="text-green-600 font-semibold">92%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style="width: 0%" data-width="92%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-gray-700">Team Collaboration</span>
+                                <span class="text-purple-600 font-semibold">88%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full" style="width: 0%" data-width="88%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-gray-700">Problem Solving</span>
+                                <span class="text-rose-gold-600 font-semibold">85%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-rose-gold-400 to-rose-gold-600 h-3 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-gray-700">Leadership</span>
+                                <span class="text-orange-600 font-semibold">82%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-orange-400 to-orange-600 h-3 rounded-full" style="width: 0%" data-width="82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Skills -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-playfair font-bold text-royal-blue-800 mb-8 flex items-center">
+                        <i class="fas fa-laptop-code text-gold-500 mr-3"></i>
+                        Technical Skills
+                    </h3>
+                    
+                    <!-- Microsoft Office Suite -->
+                    <div class="bg-gradient-to-br from-royal-blue-50 to-gold-50 p-6 rounded-xl mb-6">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-4 flex items-center">
+                            <i class="fab fa-microsoft text-blue-600 mr-3"></i>
+                            Microsoft Office Suite
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium text-gray-700">MS Word</span>
+                                    <span class="text-blue-600 font-semibold">90%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style="width: 0%" data-width="90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium text-gray-700">MS Excel</span>
+                                    <span class="text-green-600 font-semibold">85%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full" style="width: 0%" data-width="85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium text-gray-700">MS PowerPoint</span>
+                                    <span class="text-orange-600 font-semibold">88%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-orange-400 to-orange-600 h-2 rounded-full" style="width: 0%" data-width="88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Accounting Software -->
+                    <div class="bg-gradient-to-br from-gold-50 to-royal-blue-50 p-6 rounded-xl mb-6">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-4 flex items-center">
+                            <i class="fas fa-calculator text-gold-600 mr-3"></i>
+                            Accounting Software
+                        </h4>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-gray-700">Tally ERP 9</span>
+                                <span class="text-gold-600 font-semibold">80%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-gold-400 to-gold-600 h-3 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-3">Proficient in invoicing, budgeting, GST compliance, accounts management, financial statements, inventory tracking, and payroll</p>
+                    </div>
+                    
+                    <!-- Core Competencies -->
+                    <div class="bg-white border-2 border-gray-100 p-6 rounded-xl">
+                        <h4 class="text-lg font-semibold text-royal-blue-800 mb-4 flex items-center">
+                            <i class="fas fa-star text-gold-500 mr-3"></i>
+                            Core Competencies
+                        </h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-gradient-to-r from-gold-100 to-gold-200 px-3 py-2 rounded-lg text-center">
+                                <i class="fas fa-file-alt text-gold-600 mb-1"></i>
+                                <p class="text-sm font-medium text-gold-800">Report Writing</p>
+                            </div>
+                            <div class="bg-gradient-to-r from-royal-blue-100 to-royal-blue-200 px-3 py-2 rounded-lg text-center">
+                                <i class="fas fa-chart-bar text-royal-blue-600 mb-1"></i>
+                                <p class="text-sm font-medium text-royal-blue-800">Data Analysis</p>
+                            </div>
+                            <div class="bg-gradient-to-r from-green-100 to-green-200 px-3 py-2 rounded-lg text-center">
+                                <i class="fas fa-presentation text-green-600 mb-1"></i>
+                                <p class="text-sm font-medium text-green-800">Presentations</p>
+                            </div>
+                            <div class="bg-gradient-to-r from-purple-100 to-purple-200 px-3 py-2 rounded-lg text-center">
+                                <i class="fas fa-money-bill-wave text-purple-600 mb-1"></i>
+                                <p class="text-sm font-medium text-purple-800">Financial Analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: SkillsSection -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-royal-blue-800 to-royal-blue-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h3 class="text-3xl font-playfair font-bold mb-4 text-gradient">Amrutha M</h3>
+                <p class="text-xl mb-6 text-royal-blue-200">Associate Sales Executive</p>
+                <div class="flex justify-center space-x-8 mb-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-gold-400 mr-3"></i>
+                        <span class="text-royal-blue-200">ammu54640@gmail.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone text-gold-400 mr-3"></i>
+                        <span class="text-royal-blue-200">+91-9019849464</span>
+                    </div>
+                </div>
+                <div class="border-t border-royal-blue-700 pt-6">
+                    <p class="text-royal-blue-300">&copy; 2025 Amrutha M. Professional Portfolio - Designed for Excellence in Sales</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    
+                    // Animate skill bars when they come into view
+                    if (entry.target.querySelector('.skill-bar')) {
+                        entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+                            const width = bar.getAttribute('data-width');
+                            setTimeout(() => {
+                                bar.style.width = width;
+                            }, 300);
+                        });
+                    }
+                    
+                    // Animate counters
+                    if (entry.target.querySelector('[data-counter]')) {
+                        entry.target.querySelectorAll('[data-counter]').forEach(counter => {
+                            const target = parseInt(counter.getAttribute('data-counter'));
+                            let current = 0;
+                            const increment = target / 30;
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    current = target;
+                                    clearInterval(timer);
+                                }
+                                counter.textContent = Math.floor(current);
+                            }, 50);
+                        });
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-gold-500');
+                link.classList.add('text-royal-blue-700');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-royal-blue-700');
+                    link.classList.add('text-gold-500');
+                }
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('#hero');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // TODO: Implement business logic for:
+        // - Achievement image upload functionality
+        // - Dynamic content management
+        // - Contact form submission
+        // - Portfolio data persistence
+        // - Analytics tracking
+        // - SEO optimization
+    </script>
+</body>
+</html>

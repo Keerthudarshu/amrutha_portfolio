@@ -290,8 +290,8 @@ export default function Portfolio() {
                   }}
                 >
                   <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
-                    <img 
-                      src="/@assets/image_1755886630861.png" 
+                      <img 
+                        src="/img/hero img.jpg" 
                       alt="Amrutha M"
                       className="w-full h-full object-cover rounded-full"
                       data-testid="hero-profile-image"
@@ -360,9 +360,10 @@ export default function Portfolio() {
             >
               <div className="w-full h-80 bg-gradient-to-br from-royal-blue-100 to-gold-100 rounded-xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/@assets/image_1755886630861.png" 
+                  src="/img/amrutha.jpg" 
                   alt="Amrutha M - Professional Photo"
-                  className="w-full h-full object-cover rounded-xl"
+                  className="w-full h-full object-contain rounded-xl bg-white"
+                  style={{objectFit: 'contain'}}
                   data-testid="about-profile-image"
                 />
               </div>
@@ -424,7 +425,7 @@ export default function Portfolio() {
                   <h4 className="text-lg font-semibold text-royal-blue-800 mb-3">Languages</h4>
                   <div className="flex flex-wrap gap-3">
                     {['English', 'Kannada', 'Tamil', 'Malayalam'].map((lang) => (
-                      <Badge key={lang} variant="secondary" className="bg-white shadow-sm">
+                      <Badge key={lang} variant="secondary" className="bg-white shadow-sm text-black">
                         {lang}
                       </Badge>
                     ))}
@@ -838,7 +839,7 @@ export default function Portfolio() {
                 year: "June 2025",
                 color: "gold",
                 icon: Trophy,
-                image: "WhatsApp Image 2025-08-22 at 22.24.24_ac5c684c_1755886705703.jpg"
+                image: "Cross_Sale.jpg"
               },
               {
                 title: "Customer Excellence Recognition",
@@ -846,7 +847,7 @@ export default function Portfolio() {
                 year: "2025",
                 color: "royal-blue",
                 icon: Star,
-                image: "WhatsApp Image 2025-08-22 at 23.49.40_02dedc73_1755887308211.jpg"
+                image: "Customer_review.jpg"
               },
               {
                 title: "₹15+ Lakh Sales Achievement",
@@ -854,7 +855,7 @@ export default function Portfolio() {
                 year: "2025",
                 color: "green",
                 icon: Award,
-                image: "WhatsApp Image 2025-08-22 at 23.51.52_c86105ac_1755887274230.jpg"
+                image: "Sales Achievement.jpg"
               },
               {
                 title: "Top-1 Gold Sales Performance",
@@ -862,14 +863,14 @@ export default function Portfolio() {
                 year: "July 2025",
                 color: "rose-gold",
                 icon: Medal,
-                image: "WhatsApp Image 2025-08-23 at 00.01.31_6c879c9c_1755887515388.jpg"
+                image: "Gold Sales.jpg"
               }
             ].map((achievement, index) => (
               <motion.div key={index} variants={scaleIn}>
                 <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <div className="w-full h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
                     <img 
-                      src={`/@assets/${achievement.image}`} 
+                      src={`/img/${achievement.image}`}
                       alt={achievement.title}
                       className="w-full h-full object-contain"
                       data-testid={`achievement-${index}-image`}
