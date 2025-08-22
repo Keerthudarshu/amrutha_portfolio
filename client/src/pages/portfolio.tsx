@@ -290,9 +290,12 @@ export default function Portfolio() {
                   }}
                 >
                   <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-gold-100 to-royal-blue-100 flex items-center justify-center text-6xl text-royal-blue-600">
-                      AM
-                    </div>
+                    <img 
+                      src="/@assets/image_1755886630861.png" 
+                      alt="Amrutha M"
+                      className="w-full h-full object-cover rounded-full"
+                      data-testid="hero-profile-image"
+                    />
                   </div>
                 </motion.div>
                 
@@ -355,8 +358,13 @@ export default function Portfolio() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="w-full h-80 bg-gradient-to-br from-royal-blue-100 to-gold-100 rounded-xl flex items-center justify-center text-royal-blue-600">
-                <Briefcase size={120} />
+              <div className="w-full h-80 bg-gradient-to-br from-royal-blue-100 to-gold-100 rounded-xl flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/@assets/image_1755886630861.png" 
+                  alt="Amrutha M - Professional Photo"
+                  className="w-full h-full object-cover rounded-xl"
+                  data-testid="about-profile-image"
+                />
               </div>
             </motion.div>
             
@@ -817,7 +825,7 @@ export default function Portfolio() {
           
           {/* Achievement Gallery */}
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 gap-8"
             variants={staggerChildren}
             initial="initial"
             whileInView="animate"
@@ -825,52 +833,47 @@ export default function Portfolio() {
           >
             {[
               {
-                title: "Sales Excellence Award",
-                description: "Outstanding customer engagement and target achievement at Bhima Jewellers",
+                title: "Diamond Cross Sale Achievement",
+                description: "Achieved 0.26 carats sales conversion at PL Counter contributing to total 0.54 carats for HBR branch on 01-06-2025",
+                year: "June 2025",
+                color: "gold",
+                icon: Trophy,
+                image: "WhatsApp Image 2025-08-22 at 22.24.24_ac5c684c_1755886705703.jpg"
+              },
+              {
+                title: "Customer Excellence Recognition",
+                description: "Customer specifically appreciated exceptional service, patience, and product knowledge creating memorable shopping experience",
                 year: "2025",
-                color: "gold",
-                icon: Trophy
-              },
-              {
-                title: "Mahindra Pride Certification",
-                description: "Employability Skills Programme completion with distinction",
-                year: "2023",
                 color: "royal-blue",
-                icon: Tag
+                icon: Star,
+                image: "WhatsApp Image 2025-08-22 at 23.49.40_02dedc73_1755887308211.jpg"
               },
               {
-                title: "CSR Project Excellence",
-                description: "Successful completion of Corporate Social Responsibility project at PACS",
-                year: "2024",
+                title: "₹15+ Lakh Sales Achievement",
+                description: "Congratulatory recognition from Deputy Cluster Head for generating exceptional sales bill over ₹15 lakh",
+                year: "2025",
                 color: "green",
-                icon: Award
+                icon: Award,
+                image: "WhatsApp Image 2025-08-22 at 23.51.52_c86105ac_1755887274230.jpg"
               },
               {
-                title: "Team Leadership",
-                description: "Led event organization and sports programs demonstrating leadership skills",
-                year: "Multiple Years",
+                title: "Top-1 Gold Sales Performance",
+                description: "Secured Top-1 position in Gold Sales (50 grams and above) for HBR Branch, showcasing excellence in luxury sales",
+                year: "July 2025",
                 color: "rose-gold",
-                icon: Users
-              },
-              {
-                title: "Academic Excellence",
-                description: "B.Com graduation with strong academic performance and project acceptance",
-                year: "2024",
-                color: "gold",
-                icon: GraduationCap
-              },
-              {
-                title: "Event Management",
-                description: "Active participation and organizing committee member for cultural fests",
-                year: "School & College",
-                color: "purple",
-                icon: Star
+                icon: Medal,
+                image: "WhatsApp Image 2025-08-23 at 00.01.31_6c879c9c_1755887515388.jpg"
               }
             ].map((achievement, index) => (
               <motion.div key={index} variants={scaleIn}>
                 <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                  <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <achievement.icon size={60} className={`text-${achievement.color}-600`} />
+                  <div className="w-full h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={`/@assets/${achievement.image}`} 
+                      alt={achievement.title}
+                      className="w-full h-full object-contain"
+                      data-testid={`achievement-${index}-image`}
+                    />
                   </div>
                   <CardContent className="p-6">
                     <h4 className="text-lg font-semibold text-royal-blue-800 mb-2" data-testid={`achievement-${index}-title`}>
